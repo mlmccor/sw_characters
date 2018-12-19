@@ -24,6 +24,7 @@ class SwCharacters::CLI
   end
 
   def menu
+    puts ""
     puts "1. List all Characters"
     puts "2. List all Planets"
     puts "3. List all Films"
@@ -54,8 +55,9 @@ class SwCharacters::CLI
 
   def list_characters
     puts ""
-    SwCharacters::Character.all.each do |id, character|
-      puts "#{id}. #{character.name}"
+    sorted = SwCharacters::Character.all.sort_by {|id, character| id.to_i}
+    sorted.each do |character|
+      puts "#{character[0]}. #{character[1].name}"
     end
     puts "Select a character number or type menu for main menu"
     input = gets.chomp
@@ -83,8 +85,9 @@ class SwCharacters::CLI
 
   def list_planets
     puts ""
-    SwCharacters::Planet.all.each do |id, planet|
-      puts "#{id}. #{planet.name}"
+    sorted = SwCharacters::Planet.all.sort_by {|id, planet| id.to_i}
+    sorted.each do |planet|
+      puts "#{planet[0]}. #{planet[1].name}"
     end
     puts "Select a planet number or type menu for main menu"
     input = gets.chomp
@@ -109,8 +112,9 @@ class SwCharacters::CLI
 
   def list_films
     puts ""
-    SwCharacters::Film.all.each do |key, film|
-      puts "#{key}. #{film.title}"
+    sorted = SwCharacters::Film.all.sort_by {|id, planet| id.to_i}
+    sorted.each do |film|
+      puts "#{film[0]}. #{film[1].title}"
     end
     puts "Select a film number or type menu for main menu"
     input = gets.chomp
@@ -134,9 +138,11 @@ class SwCharacters::CLI
 
   def list_species
     puts ""
-    SwCharacters::Species.all.each do |key, species|
-      puts "#{key}. #{species.name}"
+    sorted = SwCharacters::Species.all.sort_by {|id, species| id.to_i}
+    sorted.each do |species|
+      puts "#{species[0]}. #{species[1].name}"
     end
+    puts ""
     puts "Select a species number or type menu for main menu"
     input = gets.chomp
     if input == 'menu'
