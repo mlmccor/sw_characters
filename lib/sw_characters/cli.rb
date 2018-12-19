@@ -101,6 +101,8 @@ class SwCharacters::CLI
   def display_planet(input)
     puts ""
     puts "#{SwCharacters::Planet.all[input].name}"
+    puts "Climate: #{SwCharacters::Planet.all[input].climate}"
+    puts "Terrain: #{SwCharacters::Planet.all[input].terrain}"
     puts "Natives:"
     SwCharacters::Character.all.each do |id, character|
       if character.homeworld.name == SwCharacters::Planet.all[input].name

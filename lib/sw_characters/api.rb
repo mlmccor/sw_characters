@@ -40,7 +40,7 @@ class SwCharacters::API
       planets = my_hash['results']
       planets.each do |planet|
         id = planet['url'].split('/').last
-        SwCharacters::Planet.new(planet['name'], id)
+        SwCharacters::Planet.new(planet['name'], id, planet['climate'], planet['terrain'])
       end
       x += 1
     end
