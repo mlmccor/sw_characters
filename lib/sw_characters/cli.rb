@@ -30,6 +30,7 @@ class SwCharacters::CLI
     puts "3. List all Films"
     puts "4. List all Species"
     puts "5. Search Characters by name"
+    puts "exit: Exits the program"
     input = gets.strip
     case input
     when '1'
@@ -42,6 +43,9 @@ class SwCharacters::CLI
       self.list_species
     when '5'
       self.search_characters
+    when 'exit'
+      puts "Thank you for using the Star Wars Character Database!"
+      puts "May the Force be with you!"
     end
   end
 
