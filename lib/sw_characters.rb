@@ -1,0 +1,9 @@
+require_relative "sw_characters/version"
+require './lib/sw_characters/cli.rb'
+require './lib/sw_characters/character.rb'
+require './lib/sw_characters/api.rb'
+require './lib/sw_characters/planet.rb'
+require './lib/sw_characters/film.rb'
+require './lib/sw_characters/species.rb'
+require 'open-uri'
+require 'nokogiri'

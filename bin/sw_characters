@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/sw_characters'
+
+SwCharacters::CLI.new.run
