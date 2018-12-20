@@ -5,12 +5,14 @@ require 'json'
 class SwCharacters::API
 
   def self.load_characters
+    puts "Loading Characters..."
     y = 1
     x = 1
     until y == SwCharacters::Character.all.length
       data = open("https://swapi.co/api/people/?page=#{x}&format=json").read
       my_hash = JSON.parse(data)
       y = my_hash['count'].to_i
+      print "#{SwCharacters::Character.all.length}..."
       people = my_hash['results']
       people.each do |person|
         if person['species'].length == 0
@@ -32,9 +34,11 @@ class SwCharacters::API
       end
       x += 1
     end
+    puts "#{SwCharacters::Character.all.length} Characters Loaded"
   end
 
   def self.load_planets
+    print "Loading Planets..."
     y = 1
     x = 1
     until y == SwCharacters::Planet.all.length
@@ -48,9 +52,11 @@ class SwCharacters::API
       end
       x += 1
     end
+    puts "Planets Loaded"
   end
 
   def self.load_films
+    print "Loading Films..."
       data = open("https://swapi.co/api/films/?format=json").read
       my_hash = JSON.parse(data)
       films = my_hash['results']
@@ -58,9 +64,11 @@ class SwCharacters::API
         id = film['url'].split('/').last
         SwCharacters::Film.new(film['title'],film['opening_crawl'],film['director'],film['release_date'], id)
       end
+      puts "Films Loaded"
   end
 
   def self.load_species
+    print "Loading Species..."
     y = 1
     x = 1
     until y == SwCharacters::Species.all.length
@@ -74,6 +82,7 @@ class SwCharacters::API
       end
       x += 1
     end
+    puts "Species loaded"
   end
 
 end

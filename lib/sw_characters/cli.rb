@@ -4,10 +4,6 @@ require 'pry'
 class SwCharacters::CLI
 
   def run
-    SwCharacters::API.load_planets
-    SwCharacters::API.load_films
-    SwCharacters::API.load_species
-    SwCharacters::API.load_characters
     puts ""
     puts "
 ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
@@ -20,6 +16,11 @@ class SwCharacters::CLI
 "
     puts "Welcome to the Star Wars Character Database!"
     puts ""
+    SwCharacters::API.load_planets
+    SwCharacters::API.load_films
+    SwCharacters::API.load_species
+    SwCharacters::API.load_characters
+
     self.menu
   end
 
@@ -31,6 +32,7 @@ class SwCharacters::CLI
     puts "4. List all Species"
     puts "5. Search Characters by name"
     puts "exit: Exits the program"
+    # run while @input != "exit"
     input = gets.strip
     case input
     when '1'
@@ -65,10 +67,13 @@ class SwCharacters::CLI
     end
     puts "Select a character number or type menu for main menu"
     input = gets.chomp
-    if input == 'menu'
-      self.menu
-    elsif SwCharacters::Character.all.keys.include?(input)
+    if SwCharacters::Character.all.keys.include?(input)
       self.display_character(input)
+    elsif input == 'menu'
+      self.menu
+    else
+      'Invalid input'
+      self.list_characters
     end
   end
 
