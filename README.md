@@ -1,21 +1,13 @@
 # SwCharacters
 
+## Description
+
+The Star Wars Character Database is a self-updating encyclopedia of all named characters in the Star Wars movies. It also has additional information all planets and species in the Star Wars Universe, as well as most films (currently only updated through Episode 7).
+
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'sw_characters'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sw_characters
+Just download all files from the repository and simply run the sw_characters file in the bin directory.
 
 ## Usage
 
@@ -27,11 +19,10 @@ Typing 5 will allow you to search through the list of characters using their nam
 
 Entering exit will exit the program
 
-## Development
+## License
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+The license for the program is included in the file directory: LICENSE.txt
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
