@@ -5,10 +5,12 @@ require 'json'
 class SwCharacters::API
 
   def self.load_characters
+    y = 1
     x = 1
-    until x == 10
+    until y == SwCharacters::Character.all.length
       data = open("https://swapi.co/api/people/?page=#{x}&format=json").read
       my_hash = JSON.parse(data)
+      y = my_hash['count'].to_i
       people = my_hash['results']
       people.each do |person|
         if person['species'].length == 0
@@ -33,10 +35,12 @@ class SwCharacters::API
   end
 
   def self.load_planets
+    y = 1
     x = 1
-    until x == 8
+    until y == SwCharacters::Planet.all.length
       data = open("https://swapi.co/api/planets/?page=#{x}&format=json").read
       my_hash = JSON.parse(data)
+      y = my_hash['count'].to_i
       planets = my_hash['results']
       planets.each do |planet|
         id = planet['url'].split('/').last
@@ -57,10 +61,12 @@ class SwCharacters::API
   end
 
   def self.load_species
+    y = 1
     x = 1
-    until x == 5
+    until y == SwCharacters::Species.all.length
       data = open("https://swapi.co/api/species/?page=#{x}&format=json").read
       my_hash = JSON.parse(data)
+      y = my_hash['count'].to_i
       species = my_hash['results']
       species.each do |species|
         id = species['url'].split('/').last
