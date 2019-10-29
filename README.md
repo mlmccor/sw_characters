@@ -4,7 +4,7 @@
 
 The Star Wars Character Database is a self-updating encyclopedia of all named characters in the Star Wars movies. It also has additional information all planets and species in the Star Wars Universe, as well as most films (currently only updated through Episode 7).
 
-# Video Demo
+## Video Demo
 
 A video walkthrough can be found <a href="https://www.youtube.com/watch?v=kkgj5NtZ_bU">here</a>
 
