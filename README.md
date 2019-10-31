@@ -11,11 +11,13 @@ A video walkthrough can be found <a href="https://www.youtube.com/watch?v=kkgj5N
 
 ## Installation
 
-Just download all files from the repository and simply run in the terminal: 
+Simply install the gem on your local machine using:
 
-./bin/sw_characters
+gem install sw_characters
 
-Then follow the onscreen instructions
+then to run the app, type in your terminal
+
+sw_characters
 
 ## Usage
 
