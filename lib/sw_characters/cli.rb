@@ -183,6 +183,7 @@ class SwCharacters::CLI
   def search_characters
     puts ''
     puts 'Please type the name of a character'
+    puts 'Capitalizaton is important'
     puts 'For best results, type only one part of their name and omit titles like "General"'
     input = gets.chomp
     results = SwCharacters::Character.all.select do |id, character|
